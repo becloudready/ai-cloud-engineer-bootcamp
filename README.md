@@ -51,6 +51,7 @@ Linux fluency is the floor for any DevOps role.
 ## Git & GitHub
 
 **Official / free:**
+- [Git & GitHub — my YouTube playlist](https://www.youtube.com/watch?v=AhVUVezcj8g&list=PLc3FmsLyhBtspphc04ABMpmwf_aizn9Sq) — start here
 - [Pro Git book (2nd ed.)](https://git-scm.com/book/en/v2) — Chacon & Straub, free online
 - [Git reference docs](https://git-scm.com/docs)
 - [GitHub Skills](https://skills.github.com/) — interactive in-repo courses
