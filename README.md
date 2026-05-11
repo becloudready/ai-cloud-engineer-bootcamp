@@ -147,7 +147,6 @@ I teach AWS-first because that's where the jobs are. Pick up Azure/GCP after.
 - [Terraform Get Started — AWS](https://developer.hashicorp.com/terraform/tutorials/aws-get-started)
 - [Terraform Associate (004) prep](https://developer.hashicorp.com/terraform/tutorials/certification-associate-tutorials) — current exam version
 - [Terraform Registry](https://registry.terraform.io/)
-- [Checkov](https://www.checkov.io/) — IaC security scanner
 - [Trivy](https://trivy.dev/) — `tfsec` was merged into Trivy in 2024, use this
 
 ### Pulumi
@@ -195,7 +194,6 @@ I teach AWS-first because that's where the jobs are. Pick up Azure/GCP after.
 - [OpenTelemetry documentation](https://opentelemetry.io/docs/) — the vendor-neutral standard worth learning
 - [Datadog Learning Center](https://learn.datadoghq.com/)
 - [Observability Engineering (Honeycomb, free O'Reilly PDF)](https://info.honeycomb.io/observability-engineering-oreilly-book-2022)
-- [PagerDuty Incident Response](https://response.pagerduty.com/) — open-sourced internal runbook
 
 ---
 
@@ -248,6 +246,7 @@ Where DevOps is heading.
 
 Working through this list on your own is doable. If you'd rather have someone walk you through it live, fix your mistakes in real time, and review your capstone — that's what I run the bootcamp for.
 
+- **5-day bootcamp syllabus** → [BOOTCAMP.md](./BOOTCAMP.md)
 - **Free webinar — "Become a Cloud & DevOps Engineer"** · June 10, 2026 · 5:30 PM EDT → [becloudready.com/webinar/devops](https://becloudready.com/webinar/devops)
 - **Cloud & DevOps Bootcamp** · 5 days live · starts June 15, 2026 · CAD $299 → [becloudready.com/programs/cloud-devops-bootcamp](https://becloudready.com/programs/cloud-devops-bootcamp)
 
