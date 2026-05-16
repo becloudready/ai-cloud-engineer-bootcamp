@@ -1,12 +1,13 @@
-# Cloud & DevOps Bootcamp — 5-Day Syllabus
+# AI Cloud Engineer Bootcamp — Syllabus
 
-This is the running agenda for the Cloud & DevOps Bootcamp I teach at beCloudReady. Five days, three hours each, live with hands-on labs.
+The day-by-day topics, labs, and reference resources I use to run my live bootcamp.
 
-For the broader self-study list of official DevOps resources, see [README.md](./README.md). This file is narrower — only what we cover in the 15 live hours.
+For the current cohort dates, format, price, and registration, see the course page:
+→ [becloudready.com/programs/ai-cloud-engineer-bootcamp](https://becloudready.com/programs/ai-cloud-engineer-bootcamp)
 
-**Format:** Mon–Fri · 3 hrs/day · 15 hrs total · Live on Zoom + Discord
-**Next cohort:** June 15–19, 2026 · 5–8 PM EST · [Enroll](https://becloudready.com/programs/cloud-devops-bootcamp)
-**Prerequisites:** basic Linux CLI, comfort with Bash or Python, an AWS Free Tier account
+For the broader self-study list of official resources, see [README.md](./README.md).
+
+**Prerequisites:** basic Linux CLI, comfort with Bash or Python, an AWS Free Tier account.
 
 ---
 
@@ -19,7 +20,6 @@ Get these out of the way so we don't burn live time on setup.
 - Terraform CLI installed (`terraform -v`)
 - `kubectl` and `helm` installed
 - VS Code (or your editor) + Git configured
-- Discord joined (invite in your registration email)
 
 Light pre-reading if you have time:
 - [LFS101 — Intro to Linux](https://training.linuxfoundation.org/training/introduction-to-linux/) Chapters 1–5
@@ -107,17 +107,18 @@ Wire a GitHub Actions workflow that, on push to `main`: runs tests → builds + 
 
 ---
 
-## Day 5 — SRE, Production Readiness & Capstone
+## Day 5 — SRE, Production Readiness & RAG Capstone
 
 **Topics**
 - SLOs and error budgets
 - Alerting with Grafana / Datadog
 - Log aggregation and distributed tracing (OpenTelemetry)
 - Incident response playbooks
+- Small RAG pipeline architecture — vector DB, embedding service, retrieval API, LLM endpoint
 - Capstone demo
 
 **Lab / Capstone**
-Build out the production reference stack: AWS + EKS (Terraform-managed) + a multi-service app (Kafka, PostgreSQL, Redis) + CI/CD from Day 4 + Prometheus/Grafana dashboards + an OpenTelemetry-instrumented service + a one-page runbook for a simulated incident. Demo on Day 5 evening.
+Build out the production reference stack: AWS + EKS (Terraform-managed) + a multi-service app (Kafka, PostgreSQL, Redis) + CI/CD from Day 4 + Prometheus/Grafana dashboards + an OpenTelemetry-instrumented service + a one-page runbook for a simulated incident — then layer a small RAG pipeline on top (pgvector or Pinecone as the vector store, an embedding worker, a FastAPI retrieval service, and an OpenAI-compatible LLM endpoint via vLLM or a hosted model). Demo the full AI Cloud Engineer reference stack on Day 5 evening.
 
 **References**
 - [Google SRE Book](https://sre.google/sre-book/table-of-contents/) · [Site Reliability Workbook](https://sre.google/workbook/table-of-contents/)
@@ -129,10 +130,10 @@ Build out the production reference stack: AWS + EKS (Terraform-managed) + a mult
 
 ## After the Bootcamp
 
+Mentoring, capstone review, resume and LinkedIn review, hiring-partner intros, and lifetime community access are all included with the current cohort — full details on the [course page](https://becloudready.com/programs/ai-cloud-engineer-bootcamp).
+
+Also useful:
 - Interview prep: [k8s-interview-action](https://github.com/becloudready/k8s-interview-action) · [interview-challenges](https://github.com/becloudready/interview-challenges)
-- 1:1 capstone review (scheduled within 2 weeks of Day 5)
-- Resume + LinkedIn review
-- Hiring-partner intros via Discord
 - Broader self-study list: [README.md](./README.md)
 
 — Chandan Kumar, [beCloudReady](https://becloudready.com)
