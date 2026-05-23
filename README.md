@@ -1,11 +1,11 @@
 # AI Cloud Engineer Bootcamp — Syllabus
 
-The day-by-day topics, labs, and reference resources I use to run my live bootcamp.
+The week-by-week topics, labs, and reference resources I use to run my live bootcamp.
 
 For the current cohort dates, format, price, and registration, see the course page:
 → [becloudready.com/programs/ai-cloud-engineer-bootcamp](https://becloudready.com/programs/ai-cloud-engineer-bootcamp)
 
-For the broader self-study list of official resources, see [README.md](./README.md).
+**Format note (updated):** Earlier cohorts ran as a 5-day Mon–Fri intensive. Based on feedback that the pace was overwhelming, the program now runs across **6 weeks, every Monday, 6:00–8:00 PM EST**. The total instructional time (~12 hours live) is the same — just spread out so you can actually finish the labs between sessions. Ongoing Slack support across all 6 weeks, plus a 1-hour interview prep session after completion.
 
 **Prerequisites:** basic Linux CLI, comfort with Bash or Python, an AWS Free Tier account.
 
@@ -28,7 +28,7 @@ Light pre-reading if you have time:
 
 ---
 
-## Week 1 — Cloud Foundations & AWS Core
+## Week 1 — Cloud Foundations
 
 **Topics**
 - VPC, IAM, EC2, S3, RDS — deep dive
@@ -36,8 +36,8 @@ Light pre-reading if you have time:
 - Cost optimisation & billing
 - AWS CLI & SDK fundamentals
 
-**Lab**
-Stand up a 3-tier VPC (public/private subnets, NAT, IGW), launch an EC2 instance into the private subnet, attach a bastion, query S3 via CLI from the instance, and write a least-privilege IAM policy that scopes access to a single bucket.
+**Lab (this week)**
+Stand up a 3-tier VPC (public/private subnets, NAT, IGW), launch an EC2 instance into the private subnet, attach a bastion, query S3 via CLI from the instance, and write a least-privilege IAM policy that scopes access to a single bucket. Lab support runs in Slack all week.
 
 **References**
 - [AWS Technical Essentials](https://skillbuilder.aws/learn/A8RGTRTGE2/aws-technical-essentials/JGW7HKGGUM)
@@ -47,7 +47,7 @@ Stand up a 3-tier VPC (public/private subnets, NAT, IGW), launch an EC2 instance
 
 ---
 
-## Week 2 — Containers & Orchestration
+## Week 2 — Containers
 
 **Topics**
 - Docker — images, layers, networking, volumes, multi-stage builds
@@ -55,7 +55,7 @@ Stand up a 3-tier VPC (public/private subnets, NAT, IGW), launch an EC2 instance
 - EKS cluster setup on AWS
 - Helm charts and GitOps with Argo CD
 
-**Lab**
+**Lab (this week)**
 Containerise a Python/FastAPI app with a multi-stage Dockerfile (<50 MB final image), push to ECR, deploy to an EKS cluster via a Helm chart, then wire Argo CD to auto-sync the deployment from a Git repo.
 
 **References**
@@ -68,15 +68,16 @@ Containerise a Python/FastAPI app with a multi-stage Dockerfile (<50 MB final im
 
 ---
 
-## Week 3 — Infrastructure as Code (Terraform)
+## Week 3 — Terraform
 
 **Topics**
 - Terraform modules & workspaces
 - Remote state with S3 + DynamoDB locking
 - Drift detection and remediation
+- Security scanning with tfsec
 
-**Lab**
-Rewrite Day 1's manually-built VPC + EC2 as Terraform modules with a `dev` and `prod` workspace, store state remotely with locking, and demo `terraform plan` catching a drift.
+**Lab (this week)**
+Rewrite Week 1's manually-built VPC + EC2 as Terraform modules with a `dev` and `prod` workspace, store state remotely with locking, and demo `terraform plan` catching a drift.
 
 **References**
 - [Terraform — Get Started on AWS](https://developer.hashicorp.com/terraform/tutorials/aws-get-started)
@@ -87,53 +88,81 @@ Rewrite Day 1's manually-built VPC + EC2 as Terraform modules with a `dev` and `
 
 ---
 
-## Week 4 — CI/CD & Delivery Pipelines
+## Week 4 — DevOps / SRE
 
 **Topics**
 - GitHub Actions — build, test, deploy workflows
 - Blue-green and canary deployment strategies
 - Container registry workflows + image scanning
 - Secrets management (AWS Secrets Manager / Vault)
+- SLOs, error budgets, alerting with Grafana / Datadog
+- Log aggregation and distributed tracing (OpenTelemetry)
+- Incident response playbooks
 
-**Lab**
-Wire a GitHub Actions workflow that, on push to `main`: runs tests → builds + scans a container → pushes to ECR (via OIDC, no static keys) → triggers Argo CD to roll out a blue-green deploy to EKS. Demo the rollback path.
+**Lab (this week)**
+Wire a GitHub Actions workflow that, on push to `main`: runs tests → builds + scans a container → pushes to ECR (via OIDC, no static keys) → triggers Argo CD to roll out a blue-green deploy to EKS. Add Prometheus/Grafana dashboards and an OpenTelemetry-instrumented service, define one SLO with an error budget, and write a one-page runbook for a simulated incident.
 
 **References**
 - [GitHub Actions docs](https://docs.github.com/en/actions) · [Quickstart](https://docs.github.com/en/actions/get-started/quickstart)
-- [GitHub Skills](https://github.com/skills)
-- [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
-- [DORA — DevOps Research & Assessment](https://dora.dev/) — the four key metrics
-- [Snyk Learn](https://learn.snyk.io/)
-
----
-
-## Week 5 — SRE, Production Readiness & RAG Capstone
-
-**Topics**
-- SLOs and error budgets
-- Alerting with Grafana / Datadog
-- Log aggregation and distributed tracing (OpenTelemetry)
-- Incident response playbooks
-- Small RAG pipeline architecture — vector DB, embedding service, retrieval API, LLM endpoint
-- Capstone demo
-
-**Lab / Capstone**
-Build out the production reference stack: AWS + EKS (Terraform-managed) + a multi-service app (Kafka, PostgreSQL, Redis) + CI/CD from Day 4 + Prometheus/Grafana dashboards + an OpenTelemetry-instrumented service + a one-page runbook for a simulated incident — then layer a small RAG pipeline on top (pgvector or Pinecone as the vector store, an embedding worker, a FastAPI retrieval service, and an OpenAI-compatible LLM endpoint via vLLM or a hosted model). Demo the full AI Cloud Engineer reference stack on Day 5 evening.
-
-**References**
 - [Google SRE Book](https://sre.google/sre-book/table-of-contents/) · [Site Reliability Workbook](https://sre.google/workbook/table-of-contents/)
 - [Prometheus — First Steps](https://prometheus.io/docs/introduction/first_steps/)
 - [Grafana Labs tutorials](https://grafana.com/tutorials/)
 - [OpenTelemetry documentation](https://opentelemetry.io/docs/)
+- [DORA — DevOps Research & Assessment](https://dora.dev/) — the four key metrics
+- [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
+- [Snyk Learn](https://learn.snyk.io/)
+
+---
+
+## Week 5 — AI, RAG, and AgentOps
+
+**Topics**
+- Why every production AI agent is a distributed system, not a notebook
+- LLM serving — hosted endpoints vs. self-hosted (vLLM, TGI) on GPU nodes
+- Vector databases — pgvector, Pinecone; embedding workers; index lifecycle
+- RAG pipeline architecture — retrieval API, reranking, evals
+- AgentOps — agent orchestration, tool registries, observability for LLM calls, cost guardrails, prompt versioning
+- SQL-safety patterns for agents that touch real data (read-only roles, query budgets, schema allow-lists)
+
+**Lab (this week)**
+Layer a small RAG service on top of the EKS cluster from earlier weeks: pgvector as the vector store, a small embedding worker, a FastAPI retrieval service, and an OpenAI-compatible LLM endpoint (vLLM or a hosted model). Instrument the LLM calls with OpenTelemetry, set a per-request token budget, and add a Grafana panel for cost-per-request.
+
+**References**
+- [LangChain docs](https://python.langchain.com/docs/get_started/introduction)
+- [LlamaIndex docs](https://docs.llamaindex.ai/)
+- [pgvector](https://github.com/pgvector/pgvector) · [Pinecone docs](https://docs.pinecone.io/)
+- [vLLM](https://docs.vllm.ai/) · [Text Generation Inference (TGI)](https://huggingface.co/docs/text-generation-inference/index)
+- [OpenTelemetry for LLMs (Traceloop / OpenLLMetry)](https://github.com/traceloop/openllmetry)
+- [db-agent](https://github.com/db-agent/db-agent) — my open-source reference for the SQL-safety + agent pattern
+
+---
+
+## Week 6 — Project: End-to-End Agentic AI Data Engineering (db-agent)
+
+**The capstone.** You take everything from Weeks 1–5 and ship one working system: an agentic text-to-SQL data engineering pipeline, deployed on the cloud you've been building all along.
+
+**What you'll build**
+- A working clone of the open-source [db-agent](https://github.com/db-agent/db-agent) pattern on your own AWS account
+- Backend: FastAPI retrieval service + LLM endpoint (Week 5) running on the EKS cluster (Week 2), provisioned by Terraform (Week 3), deployed via the GitHub Actions + Argo CD pipeline (Week 4)
+- Read-only SQL execution path with query budgets and a schema allow-list (the safety pattern that keeps agents out of production data)
+- Observability — traces, token-cost dashboards, an SLO on retrieval latency
+- A one-page architecture diagram, a runbook, and a short demo video
+
+This is the project you point recruiters at. End-to-end, real cloud, real AI infra, your code.
+
+**References**
+- [db-agent repo](https://github.com/db-agent/db-agent) — the pattern, three deployment variants, five progressive modules
+- [AAAI-25 workshop materials](https://github.com/db-agent/db-agent) — context on the SQL-safety design
 
 ---
 
 ## After the Bootcamp
 
-Mentoring, capstone review, resume and LinkedIn review, hiring-partner intros, and lifetime community access are all included with the current cohort — full details on the [course page](https://becloudready.com/programs/ai-cloud-engineer-bootcamp).
+- **1-hour interview prep session** the week after Week 6 — resume review, LinkedIn audit, technical-interview question patterns for Cloud / DevOps / AI Cloud Engineer roles.
+- Lifetime access to the beCloudReady Slack community.
+- Eligible to re-attend future cohorts at no extra cost as the curriculum evolves.
 
 Also useful:
-- Interview prep: [k8s-interview-action](https://github.com/becloudready/k8s-interview-action) · [interview-challenges](https://github.com/becloudready/interview-challenges)
-- Broader self-study list: [README.md](./README.md)
+- Interview prep practice repos: [k8s-interview-action](https://github.com/becloudready/k8s-interview-action) · [interview-challenges](https://github.com/becloudready/interview-challenges)
 
 — Chandan Kumar, [beCloudReady](https://becloudready.com)
