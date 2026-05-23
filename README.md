@@ -11,7 +11,7 @@ For the broader self-study list of official resources, see [README.md](./README.
 
 ---
 
-## Day 0 — Before You Show Up
+## Week 0 — Before You Show Up
 
 Get these out of the way so we don't burn live time on setup.
 
@@ -28,7 +28,7 @@ Light pre-reading if you have time:
 
 ---
 
-## Day 1 — Cloud Foundations & AWS Core
+## Week 1 — Cloud Foundations & AWS Core
 
 **Topics**
 - VPC, IAM, EC2, S3, RDS — deep dive
@@ -47,7 +47,7 @@ Stand up a 3-tier VPC (public/private subnets, NAT, IGW), launch an EC2 instance
 
 ---
 
-## Day 2 — Containers & Orchestration
+## Week 2 — Containers & Orchestration
 
 **Topics**
 - Docker — images, layers, networking, volumes, multi-stage builds
@@ -68,7 +68,7 @@ Containerise a Python/FastAPI app with a multi-stage Dockerfile (<50 MB final im
 
 ---
 
-## Day 3 — Infrastructure as Code (Terraform)
+## Week 3 — Infrastructure as Code (Terraform)
 
 **Topics**
 - Terraform modules & workspaces
@@ -87,7 +87,7 @@ Rewrite Day 1's manually-built VPC + EC2 as Terraform modules with a `dev` and `
 
 ---
 
-## Day 4 — CI/CD & Delivery Pipelines
+## Week 4 — CI/CD & Delivery Pipelines
 
 **Topics**
 - GitHub Actions — build, test, deploy workflows
@@ -107,7 +107,7 @@ Wire a GitHub Actions workflow that, on push to `main`: runs tests → builds + 
 
 ---
 
-## Day 5 — SRE, Production Readiness & RAG Capstone
+## Week 5 — SRE, Production Readiness & RAG Capstone
 
 **Topics**
 - SLOs and error budgets
