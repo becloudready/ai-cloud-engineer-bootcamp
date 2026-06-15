@@ -140,9 +140,15 @@ Build out the production reference stack: AWS + EKS (Terraform-managed) + a mult
 
 ## Capstone projects
 
-**db-agent** — [db-agent](https://github.com/db-agent/db-agent) is a text-to-SQL AI agent with SQL safety guardrails, deployed on Kubernetes using a full CI/CD pipeline. It was presented at AAAI-25 and is available as Streamlit, Next.js+FastAPI, and a native Databricks App. This is what a production AI project looks like — not a notebook, not a demo, but an actual system with observability, access controls, and a deployment pipeline.
+**[db-agent](https://github.com/db-agent/db-agent)** — text-to-SQL AI agent deployed on Kubernetes
+- SQL safety guardrails, full CI/CD pipeline, presented at AAAI-25
+- Available as Streamlit, Next.js+FastAPI, and native Databricks App
 
-**AWS enterprise data lake** — [aws-data-lake](https://github.com/becloudready/quick-labs/tree/main/labs/aws-data-lake) is a three-lab sequence for building a production-grade data lake on AWS. Lab 1 builds the core pipeline: S3 raw and curated zones, a Glue PySpark ETL job converting CSV to partitioned Parquet, and Athena for querying. Lab 2 adds event-driven ingestion — S3 triggers, SQS fan-out, and Lambda handlers that feed both S3 and Redshift for a lakehouse pattern. Lab 3 covers governance with AWS Lake Formation: row-level, column-level, and tag-based access controls, with a CDC pipeline from RDS PostgreSQL via DMS. The entire environment is provisioned with Terraform using per-student sandboxed IAM. AI can generate Glue scripts and Terraform modules in seconds; owning the partition strategy, the Lake Formation tag taxonomy, and the access model is still the job.
+**[AWS enterprise data lake](https://github.com/becloudready/quick-labs/tree/main/labs/aws-data-lake)** — three-lab sequence for building a production-grade data lake on AWS
+- Lab 1: S3 raw/curated zones, Glue PySpark ETL, Parquet, Athena
+- Lab 2: event-driven ingestion — S3 triggers, SQS, Lambda, Redshift
+- Lab 3: Lake Formation governance — row/column/tag-based access controls, CDC via DMS
+- Entire environment provisioned with Terraform, per-student sandboxed IAM
 
 ## What AI has and hasn't changed
 
