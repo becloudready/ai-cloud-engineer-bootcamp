@@ -166,9 +166,9 @@ AI wrote this table. I decided what goes in each column.
 
 Option A — Self-paced: Work through the modules on your own. Everything links to the relevant open-source tools. No signup required.
 
-Option B — With the cohort: Weekly live session on Mondays 6–8 PM EDT. Slack support throughout the week. Access to the TorontoAI founder and recruiter network (10,000+ members). $299 CAD one-time. [becloudready.com](https://becloudready.com)
+Option B — With the cohort: Weekly live session on Mondays 6–8 PM EDT. Slack support throughout the week. Access to the TorontoAI founder and recruiter network (10,000+ members). $299 CAD one-time. [becloudready.com](https://becloudready.com/programs/ai-cloud-engineer-bootcamp)
 
-Option C — Corporate: Private team workshops for Databricks and cloud engineering teams. [ck@becloudready.com](mailto:ck@becloudready.com)
+Option C — Corporate: Private team workshops for Databricks and cloud engineering teams. [Book a call](https://calendly.com/kchandank/30-mins-meeting)
 
 ## Community
 
