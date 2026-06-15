@@ -1,14 +1,13 @@
-# AI Cloud Engineer Bootcamp
+# AI Cloud Engineer Bootcamp — Syllabus
 
-A free, self-paced learning path for cloud and AI engineering — built for career changers.
+The week-by-week topics, labs, and reference resources I use to run my live bootcamp.
 
-## Who this is for
+For the current cohort dates, format, price, and registration, see the course page:
+→ [becloudready.com/programs/ai-cloud-engineer-bootcamp](https://becloudready.com/programs/ai-cloud-engineer-bootcamp)
 
-If you're a sysadmin, Windows admin, DBA, desktop support tech, someone returning from a career break, or a new immigrant to Canada or the US trying to break into tech — this is for you. You have more transferable skills than you think. Knowing how to manage production systems, troubleshoot under pressure, or keep a database running through a deployment window is a foundation, not a liability. This path gives you the vocabulary and the portfolio to make that case.
+**Prerequisites:** basic Linux CLI, comfort with Bash or Python, an AWS Free Tier account.
 
-## Why this exists
-
-Every three years or so, a new technology wave hits and reshuffles the deck. The engineers who survive are the ones who adapt — not because they're geniuses, but because they've done it before. I've been doing this for 20 years: started in C/C++, pivoted to Python, then DevOps, then Big Data, and now I design AI platforms for a living. This repo is the roadmap I wish I had each time I made one of those transitions. — Chandan Kumar
+---
 
 ## The learning path
 
@@ -20,9 +19,128 @@ Every three years or so, a new technology wave hits and reshuffles the deck. The
 | 4 | SRE & Observability | Grafana, Prometheus | Live incident simulation with dashboards | AI generates dashboard JSON, you calibrate the thresholds |
 | 5 | AI / RAG / AgentOps | pgvector, LLM APIs, Ollama | Text-to-SQL RAG agent deployed to K8s | This IS the AI project — you own the guardrails |
 
+---
+
+## Week 0 — Before You Show Up
+
+Get these out of the way so we don't burn live time on setup.
+
+- AWS Free Tier account, IAM admin user with access keys, AWS CLI installed
+- Docker Desktop installed and `docker run hello-world` works
+- Terraform CLI installed (`terraform -v`)
+- `kubectl` and `helm` installed
+- VS Code (or your editor) + Git configured
+
+Light pre-reading if you have time:
+- [LFS101 — Intro to Linux](https://training.linuxfoundation.org/training/introduction-to-linux/) Chapters 1–5
+- [Git & GitHub — my YouTube playlist](https://www.youtube.com/watch?v=AhVUVezcj8g&list=PLc3FmsLyhBtspphc04ABMpmwf_aizn9Sq)
+- [AWS Cloud Practitioner Essentials](https://skillbuilder.aws/learn/94T2BEN85A/aws-cloud-practitioner-essentials/9SSAGGQQ12) — first 2 modules
+
+---
+
+## Week 1 — Cloud Foundations & AWS Core
+
+**Topics**
+- VPC, IAM, EC2, S3, RDS — deep dive
+- Networking, Security Groups, NACLs
+- Cost optimisation & billing
+- AWS CLI & SDK fundamentals
+
+**Lab**
+Stand up a 3-tier VPC (public/private subnets, NAT, IGW), launch an EC2 instance into the private subnet, attach a bastion, query S3 via CLI from the instance, and write a least-privilege IAM policy that scopes access to a single bucket.
+
+**References**
+- [AWS Technical Essentials](https://skillbuilder.aws/learn/A8RGTRTGE2/aws-technical-essentials/JGW7HKGGUM)
+- [VPC docs](https://docs.aws.amazon.com/vpc/) · [IAM docs](https://docs.aws.amazon.com/iam/) · [EC2 docs](https://docs.aws.amazon.com/ec2/) · [S3 docs](https://docs.aws.amazon.com/s3/)
+- [Well-Architected Labs](https://www.wellarchitectedlabs.com/)
+- [quick-labs](https://github.com/becloudready/quick-labs) — my repo for fast instance launchers
+
+---
+
+## Week 2 — Containers & Orchestration
+
+**Topics**
+- Docker — images, layers, networking, volumes, multi-stage builds
+- Kubernetes architecture — pods, deployments, services, ingress
+- EKS cluster setup on AWS
+- Helm charts and GitOps with Argo CD
+
+**Lab**
+Containerise a Python/FastAPI app with a multi-stage Dockerfile (<50 MB final image), push to ECR, deploy to an EKS cluster via a Helm chart, then wire Argo CD to auto-sync the deployment from a Git repo.
+
+**References**
+- [Docker — Get Started](https://docs.docker.com/get-started/) · [Multi-stage builds](https://docs.docker.com/build/building/multi-stage/)
+- [Learn Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
+- [EKS Workshop](https://www.eksworkshop.com/)
+- [Helm — Quickstart](https://helm.sh/docs/intro/quickstart/)
+- [Argo CD — Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/)
+- [docker-tutorials](https://github.com/becloudready/docker-tutorials) · [kubernetes-tutorials](https://github.com/becloudready/kubernetes-tutorials)
+
+---
+
+## Week 3 — Infrastructure as Code (Terraform)
+
+**Topics**
+- Terraform modules & workspaces
+- Remote state with S3 + DynamoDB locking
+- Drift detection and remediation
+
+**Lab**
+Rewrite Week 1's manually-built VPC + EC2 as Terraform modules with a `dev` and `prod` workspace, store state remotely with locking, and demo `terraform plan` catching a drift.
+
+**References**
+- [Terraform — Get Started on AWS](https://developer.hashicorp.com/terraform/tutorials/aws-get-started)
+- [HashiCorp Developer — Terraform tutorials](https://developer.hashicorp.com/terraform/tutorials)
+- [Terraform Registry](https://registry.terraform.io/)
+- [EKS Terraform Workshop](https://tf-eks-workshop.workshop.aws/)
+- [terraform-tutorials](https://github.com/becloudready/terraform-tutorials)
+
+---
+
+## Week 4 — CI/CD & Delivery Pipelines
+
+**Topics**
+- GitHub Actions — build, test, deploy workflows
+- Blue-green and canary deployment strategies
+- Container registry workflows + image scanning
+- Secrets management (AWS Secrets Manager / Vault)
+
+**Lab**
+Wire a GitHub Actions workflow that, on push to `main`: runs tests → builds + scans a container → pushes to ECR (via OIDC, no static keys) → triggers Argo CD to roll out a blue-green deploy to EKS. Demo the rollback path.
+
+**References**
+- [GitHub Actions docs](https://docs.github.com/en/actions) · [Quickstart](https://docs.github.com/en/actions/get-started/quickstart)
+- [GitHub Skills](https://github.com/skills)
+- [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
+- [DORA — DevOps Research & Assessment](https://dora.dev/) — the four key metrics
+- [Snyk Learn](https://learn.snyk.io/)
+
+---
+
+## Week 5 — SRE, Production Readiness & RAG Capstone
+
+**Topics**
+- SLOs and error budgets
+- Alerting with Grafana / Datadog
+- Log aggregation and distributed tracing (OpenTelemetry)
+- Incident response playbooks
+- Small RAG pipeline architecture — vector DB, embedding service, retrieval API, LLM endpoint
+- Capstone demo
+
+**Lab / Capstone**
+Build out the production reference stack: AWS + EKS (Terraform-managed) + a multi-service app (Kafka, PostgreSQL, Redis) + CI/CD from Week 4 + Prometheus/Grafana dashboards + an OpenTelemetry-instrumented service + a one-page runbook for a simulated incident — then layer a small RAG pipeline on top (pgvector or Pinecone as the vector store, an embedding worker, a FastAPI retrieval service, and an OpenAI-compatible LLM endpoint via vLLM or a hosted model).
+
+**References**
+- [Google SRE Book](https://sre.google/sre-book/table-of-contents/) · [Site Reliability Workbook](https://sre.google/workbook/table-of-contents/)
+- [Prometheus — First Steps](https://prometheus.io/docs/introduction/first_steps/)
+- [Grafana Labs tutorials](https://grafana.com/tutorials/)
+- [OpenTelemetry documentation](https://opentelemetry.io/docs/)
+
+---
+
 ## Capstone projects
 
-**db-agent** — [db-agent](https://github.com/db-agent/db-agent) is a text-to-SQL AI agent with SQL safety guardrails, deployed on Kubernetes and Databricks using a full CI/CD pipeline. It was presented at AAAI-25 and is available as Streamlit and a native Databricks App. This is what a production AI project looks like — not a notebook, not a demo, but an actual system with observability, access controls, and a deployment pipeline.
+**db-agent** — [db-agent](https://github.com/db-agent/db-agent) is a text-to-SQL AI agent with SQL safety guardrails, deployed on Kubernetes using a full CI/CD pipeline. It was presented at AAAI-25 and is available as Streamlit, Next.js+FastAPI, and a native Databricks App. This is what a production AI project looks like — not a notebook, not a demo, but an actual system with observability, access controls, and a deployment pipeline.
 
 **AWS enterprise data lake** — [aws-data-lake](https://github.com/becloudready/quick-labs/tree/main/labs/aws-data-lake) is a three-lab sequence for building a production-grade data lake on AWS. Lab 1 builds the core pipeline: S3 raw and curated zones, a Glue PySpark ETL job converting CSV to partitioned Parquet, and Athena for querying. Lab 2 adds event-driven ingestion — S3 triggers, SQS fan-out, and Lambda handlers that feed both S3 and Redshift for a lakehouse pattern. Lab 3 covers governance with AWS Lake Formation: row-level, column-level, and tag-based access controls, with a CDC pipeline from RDS PostgreSQL via DMS. The entire environment is provisioned with Terraform using per-student sandboxed IAM. AI can generate Glue scripts and Terraform modules in seconds; owning the partition strategy, the Lake Formation tag taxonomy, and the access model is still the job.
 
@@ -42,9 +160,9 @@ AI wrote this table. I decided what goes in each column.
 
 Option A — Self-paced: Work through the modules on your own. Everything links to the relevant open-source tools. No signup required.
 
-Option B — With the cohort: Weekly live session on Mondays 6–8 PM EDT. Slack support throughout the week. Access to the TorontoAI founder and recruiter network (10,000+ members). $299 CAD one-time. [becloudready.com](https://becloudready.com/programs/ai-cloud-engineer-bootcamp)
+Option B — With the cohort: Weekly live session on Mondays 6–8 PM EDT. Slack support throughout the week. Access to the TorontoAI founder and recruiter network (10,000+ members). $299 CAD one-time. [becloudready.com](https://becloudready.com)
 
-Option C — Corporate: Private team workshops for Databricks and cloud engineering teams. [Book a Meeting](https://calendly.com/kchandank/30-mins-meeting)
+Option C — Corporate: Private team workshops for Databricks and cloud engineering teams. [ck@becloudready.com](mailto:ck@becloudready.com)
 
 ## Community
 
