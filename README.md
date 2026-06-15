@@ -144,7 +144,7 @@ Build out the production reference stack: AWS + EKS (Terraform-managed) + a mult
 - SQL safety guardrails, full CI/CD pipeline, presented at AAAI-25
 - Available as Streamlit, Next.js+FastAPI, and native Databricks App
 
-**[AWS enterprise data lake](https://github.com/becloudready/quick-labs/tree/main/labs/aws-data-lake)** — three-lab sequence for building a production-grade data lake on AWS
+**[AWS enterprise data lake](https://github.com/becloudready/quick-labs/tree/master/labs/aws-data-lake)** — three-lab sequence for building a production-grade data lake on AWS
 - Lab 1: S3 raw/curated zones, Glue PySpark ETL, Parquet, Athena
 - Lab 2: event-driven ingestion — S3 triggers, SQS, Lambda, Redshift
 - Lab 3: Lake Formation governance — row/column/tag-based access controls, CDC via DMS
