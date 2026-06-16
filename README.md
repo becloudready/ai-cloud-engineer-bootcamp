@@ -2,8 +2,6 @@
 
 The week-by-week topics, labs, and reference resources I use to run my live bootcamp.
 
-For the current cohort dates, format, price, and registration, see the course page:
-→ [becloudready.com/programs/ai-cloud-engineer-bootcamp](https://becloudready.com/programs/ai-cloud-engineer-bootcamp)
 
 **Prerequisites:** basic Linux CLI, comfort with Bash or Python, an AWS Free Tier account.
 
