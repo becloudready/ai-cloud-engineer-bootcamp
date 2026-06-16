@@ -34,109 +34,68 @@ Light pre-reading if you have time:
 - IP Address/CIDR Tool - https://cidr.xyz/
 - [LFS101 — Intro to Linux](https://training.linuxfoundation.org/training/introduction-to-linux/) Chapters 1–5
 - [Git & GitHub — my YouTube playlist](https://www.youtube.com/watch?v=AhVUVezcj8g&list=PLc3FmsLyhBtspphc04ABMpmwf_aizn9Sq)
-- [AWS Cloud Practitioner Essentials](https://skillbuilder.aws/learn/94T2BEN85A/aws-cloud-practitioner-essentials/9SSAGGQQ12) — first 2 modules
 
 ---
 
 ## Week 1 — Cloud Foundations & AWS Core
 
-**Topics**
-- VPC, IAM, EC2, S3, RDS — deep dive
-- Networking, Security Groups, NACLs
-- Cost optimisation & billing
-- AWS CLI & SDK fundamentals
+**Modules**
 
-**Lab**
-Stand up a 3-tier VPC (public/private subnets, NAT, IGW), launch an EC2 instance into the private subnet, attach a bastion, query S3 via CLI from the instance, and write a least-privilege IAM policy that scopes access to a single bucket.
-
-**References**
-- [AWS Technical Essentials](https://skillbuilder.aws/learn/A8RGTRTGE2/aws-technical-essentials/JGW7HKGGUM)
-- [VPC docs](https://docs.aws.amazon.com/vpc/) · [IAM docs](https://docs.aws.amazon.com/iam/) · [EC2 docs](https://docs.aws.amazon.com/ec2/) · [S3 docs](https://docs.aws.amazon.com/s3/)
-- [Well-Architected Labs](https://www.wellarchitectedlabs.com/)
-- [quick-labs](https://github.com/becloudready/quick-labs) — my repo for fast instance launchers
+- [AWS Cloud Practitioner Essentials](https://skillbuilder.aws/learn/94T2BEN85A/aws-cloud-practitioner-essentials/9SSAGGQQ12)
+- [Virtual Private Cloud - VPC](https://skillbuilder.aws/learn/PH6Z6EVH8Z/introduction-to-amazon-virtual-private-cloud-vpc/PA8H7FUE15)
+- [AWS EC2](https://skillbuilder.aws/learn/DMG1BSGQNN/build-with-amazon-ec2/B7FZRSJADX)
+- [AWS IAM - Lab builder](https://skillbuilder.aws/learn/XFPX3M7HAQ/introduction-to-aws-identity-and-access-management-iam/DQJ3N5QRRU)
+- [AWS RDS - PostgreSQL](https://skillbuilder.aws/learn/AK479CRG5K/fundamentals-of-amazon-rds-for-postgresql/FB4ZR9N2DU)
 
 ---
 
 ## Week 2 — Containers & Orchestration
 
-**Topics**
-- Docker — images, layers, networking, volumes, multi-stage builds
-- Kubernetes architecture — pods, deployments, services, ingress
-- EKS cluster setup on AWS
-- Helm charts and GitOps with Argo CD
+**Modules**
 
-**Lab**
-Containerise a Python/FastAPI app with a multi-stage Dockerfile (<50 MB final image), push to ECR, deploy to an EKS cluster via a Helm chart, then wire Argo CD to auto-sync the deployment from a Git repo.
-
-**References**
-- [Docker — Get Started](https://docs.docker.com/get-started/) · [Multi-stage builds](https://docs.docker.com/build/building/multi-stage/)
-- [Learn Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
-- [EKS Workshop](https://www.eksworkshop.com/)
-- [Helm — Quickstart](https://helm.sh/docs/intro/quickstart/)
-- [Argo CD — Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/)
-- [docker-tutorials](https://github.com/becloudready/docker-tutorials) · [kubernetes-tutorials](https://github.com/becloudready/kubernetes-tutorials)
+- [Enable WSL (Windows Susbsystem for Linux) in Windows](https://youtu.be/uXkhc8lW_3c?si=yUM_vqJ6UeoL5tTv)
+- [Docker Desktop Setup - Windows](https://www.youtube.com/watch?v=ompGfhIKIJ0)
+- [Docker Introduction](https://www.youtube.com/watch?v=pg19Z8LL06w)
+- [Enable Kubernetes in Docker Desktop with WSL](https://www.youtube.com/watch?v=Yc1iCVXVFCI&t=3s)
+- [Kubernetes overview](https://www.youtube.com/watch?v=XuSQU5Grv1g)
 
 ---
 
 ## Week 3 — Infrastructure as Code (Terraform)
 
-**Topics**
-- Terraform modules & workspaces
-- Remote state with S3 + DynamoDB locking
-- Drift detection and remediation
+**Modules**
 
-**Lab**
-Rewrite Week 1's manually-built VPC + EC2 as Terraform modules with a `dev` and `prod` workspace, store state remotely with locking, and demo `terraform plan` catching a drift.
+- [Terraform Basics with AWS](https://www.youtube.com/watch?v=rsct-JvJmKs)
 
-**References**
-- [Terraform — Get Started on AWS](https://developer.hashicorp.com/terraform/tutorials/aws-get-started)
-- [HashiCorp Developer — Terraform tutorials](https://developer.hashicorp.com/terraform/tutorials)
-- [Terraform Registry](https://registry.terraform.io/)
-- [EKS Terraform Workshop](https://tf-eks-workshop.workshop.aws/)
-- [terraform-tutorials](https://github.com/becloudready/terraform-tutorials)
 
 ---
 
 ## Week 4 — CI/CD & Delivery Pipelines
 
-**Topics**
-- GitHub Actions — build, test, deploy workflows
-- Blue-green and canary deployment strategies
-- Container registry workflows + image scanning
-- Secrets management (AWS Secrets Manager / Vault)
+**Modules**
 
-**Lab**
-Wire a GitHub Actions workflow that, on push to `main`: runs tests → builds + scans a container → pushes to ECR (via OIDC, no static keys) → triggers Argo CD to roll out a blue-green deploy to EKS. Demo the rollback path.
-
-**References**
-- [GitHub Actions docs](https://docs.github.com/en/actions) · [Quickstart](https://docs.github.com/en/actions/get-started/quickstart)
-- [GitHub Skills](https://github.com/skills)
-- [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
-- [DORA — DevOps Research & Assessment](https://dora.dev/) — the four key metrics
-- [Snyk Learn](https://learn.snyk.io/)
+- [Git & GitHub](https://www.youtube.com/watch?v=AhVUVezcj8g&list=PLc3FmsLyhBtspphc04ABMpmwf_aizn9Sq)
+- [GitHub Actions - Detailed](https://www.youtube.com/watch?v=E2RRxcq_08E)
 
 ---
 
 ## Week 5 — SRE, Production Readiness & RAG Capstone
 
-**Topics**
-- SLOs and error budgets
-- Alerting with Grafana / Datadog
-- Log aggregation and distributed tracing (OpenTelemetry)
-- Incident response playbooks
-- Small RAG pipeline architecture — vector DB, embedding service, retrieval API, LLM endpoint
-- Capstone demo
+**Modules**
 
-**Lab / Capstone**
-Build out the production reference stack: AWS + EKS (Terraform-managed) + a multi-service app (Kafka, PostgreSQL, Redis) + CI/CD from Week 4 + Prometheus/Grafana dashboards + an OpenTelemetry-instrumented service + a one-page runbook for a simulated incident — then layer a small RAG pipeline on top (pgvector or Pinecone as the vector store, an embedding worker, a FastAPI retrieval service, and an OpenAI-compatible LLM endpoint via vLLM or a hosted model).
+- [APM vs Observability](https://www.youtube.com/watch?v=CAQ_a2-9UOI)
+- [Introduction to Observability](https://www.youtube.com/watch?v=TQur9GJHIIQ&list=PLDGkOdUX1Ujo27m6qiTPPCpFHVfyKq9jT)
 
-**References**
-- [Google SRE Book](https://sre.google/sre-book/table-of-contents/) · [Site Reliability Workbook](https://sre.google/workbook/table-of-contents/)
-- [Prometheus — First Steps](https://prometheus.io/docs/introduction/first_steps/)
-- [Grafana Labs tutorials](https://grafana.com/tutorials/)
-- [OpenTelemetry documentation](https://opentelemetry.io/docs/)
 
 ---
+
+### Week 6 - AI, LLM, Agents
+
+- [How I use LLMs by Andrej Karpathy](https://www.youtube.com/watch?v=EWvNQjAaOHw)
+- [AI Agent Skills by IBM](https://www.youtube.com/watch?v=Lg-meK5IU8Q)
+- [AI Agents MCP](https://www.youtube.com/watch?v=pvxNcQTcIy4)
+- [Retrieval-Augmented Generation - RAG](Retrieval-Augmented Generation)
+- [Claude Code Introduction by Anthropics](https://www.youtube.com/watch?v=fl1DSmwQKKY)
 
 ## Capstone projects
 
