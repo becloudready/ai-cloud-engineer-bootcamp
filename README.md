@@ -30,6 +30,8 @@ Get these out of the way so we don't burn live time on setup.
 - VS Code (or your editor) + Git configured
 
 Light pre-reading if you have time:
+- Understanding of OSI Model - https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi
+- IP Address/CIDR Tool - https://cidr.xyz/
 - [LFS101 — Intro to Linux](https://training.linuxfoundation.org/training/introduction-to-linux/) Chapters 1–5
 - [Git & GitHub — my YouTube playlist](https://www.youtube.com/watch?v=AhVUVezcj8g&list=PLc3FmsLyhBtspphc04ABMpmwf_aizn9Sq)
 - [AWS Cloud Practitioner Essentials](https://skillbuilder.aws/learn/94T2BEN85A/aws-cloud-practitioner-essentials/9SSAGGQQ12) — first 2 modules
