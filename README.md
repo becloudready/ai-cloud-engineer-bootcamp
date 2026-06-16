@@ -1,6 +1,6 @@
 # AI Cloud Engineer Bootcamp — Syllabus
 
-The week-by-week topics, labs, and reference resources I use to run my live bootcamp.
+The week-by-week topics, labs, and reference resources I use to run my live bootcamp. [Learn More](https://becloudready.com/programs/ai-cloud-engineer-bootcamp)
 
 
 **Prerequisites:** basic Linux CLI, comfort with Bash or Python, an AWS Free Tier account.
