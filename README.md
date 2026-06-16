@@ -1,4 +1,4 @@
-# AI Cloud Engineer Bootcamp — Syllabus
+# AI Cloud Engineer Learning path — 2026
 
 The week-by-week topics, labs, and reference resources I use to run my live bootcamp. [Learn More](https://becloudready.com/programs/ai-cloud-engineer-bootcamp)
 
