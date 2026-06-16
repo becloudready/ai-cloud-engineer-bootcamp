@@ -94,7 +94,7 @@ Light pre-reading if you have time:
 - [How I use LLMs by Andrej Karpathy](https://www.youtube.com/watch?v=EWvNQjAaOHw)
 - [AI Agent Skills by IBM](https://www.youtube.com/watch?v=Lg-meK5IU8Q)
 - [AI Agents MCP](https://www.youtube.com/watch?v=pvxNcQTcIy4)
-- [Retrieval-Augmented Generation - RAG](Retrieval-Augmented Generation)
+- [Retrieval-Augmented Generation - RAG](https://www.youtube.com/watch?v=T-D1OfcDW1M)
 - [Claude Code Introduction by Anthropics](https://www.youtube.com/watch?v=fl1DSmwQKKY)
 
 ## Capstone projects
